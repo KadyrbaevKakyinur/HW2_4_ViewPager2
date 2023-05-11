@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:orientation="vertical"
+        app:constraint_referenced_ids="item_img_board, item_tv_title, item_tv_desc, item_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/item_img_board"
+        android:src="@color/cardview_dark_background"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/item_img_board"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/item_tv_title"
+        android:textColor="@color/black"
+        android:text="заголовок"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/item_tv_title"
+        app:layout_constraintEnd_toEndOf="@id/item_tv_title"
+        app:layout_constraintStart_toStartOf="@id/item_tv_title"
+        android:id="@+id/item_tv_desc"
+        android:textColor="@color/black"
+        android:text="Описание"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@id/item_tv_desc"
+        app:layout_constraintEnd_toEndOf="@id/item_img_board"
+        app:layout_constraintStart_toStartOf="@id/item_img_board"
+        android:id="@+id/item_btn"
+        android:text="Let's go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
