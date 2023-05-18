@@ -36,9 +36,6 @@ abstract class BaseFragment<VB : ViewBinding>(
         setupObserver()
     }
 
-    open fun setupObserver() {
-    }
-
-
+    open fun setupObserver() {}
     abstract fun setupUI()
 }

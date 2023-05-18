@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.hw2_4_viewpager2.R
 import com.example.hw2_4_viewpager2.databinding.ItemBoardBinding
 
-class BoardAdapter : Adapter<BoardAdapter.BoardViewHolder>() {
-    private val imgList = listOf(R.drawable.img, R.drawable.img_1, R.drawable.img_2)
+class BoardAdapter(private val click: Result) : Adapter<BoardAdapter.BoardViewHolder>() {
+    private val imgList = listOf(R.raw.note_first, R.raw.note_anim, R.raw.note_anim2)
     private val titleList = listOf("title 1", "title 2" , "title 3")
     private val descList = listOf("desc 1", "desc 2" , "desc 3")
 
@@ -26,12 +26,15 @@ class BoardAdapter : Adapter<BoardAdapter.BoardViewHolder>() {
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
         holder.onBind(position)
+        holder.binding.itemBtn.setOnClickListener {
+            click.onClick()
+        }
     }
 
 
-    inner class BoardViewHolder(private val binding : ItemBoardBinding ):ViewHolder(binding.root){
+    inner class BoardViewHolder(val binding : ItemBoardBinding):ViewHolder(binding.root){
         fun onBind(position: Int){
-            binding.itemImgBoard.setImageResource(imgList[position])
+            binding.itemImgBoard.setAnimation(imgList[position])
             binding.itemTvTitle.text = titleList[position]
             binding.itemTvDesc.text = descList[position]
 
@@ -41,6 +44,10 @@ class BoardAdapter : Adapter<BoardAdapter.BoardViewHolder>() {
                 binding.itemBtn.visibility = View.GONE
             }
         }
+    }
+
+    interface Result {
+        fun onClick()
     }
 
 }
