@@ -1,4 +1,4 @@
-package com.example.hw2_4_viewpager2.fragment.note
+package com.example.hw2_4_viewpager2.note
 
 import androidx.room.*
 import com.example.hw2_4_viewpager2.model.NoteModel
@@ -16,4 +16,12 @@ interface NoteDao {
 
     @Delete
     fun deleteNote(model:NoteModel)
+
+    @Query("select * from notemodel order by date asc")
+    fun getSortedByDate(): List<NoteModel>
+
+    @Query("select * from notemodel order by title asc")
+    fun getSortedByTitle(): List<NoteModel>
+
+
 }

@@ -6,23 +6,71 @@
     app:startDestination="@id/onBoardFragment">
 
     <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.hw2_4_viewpager2.contacts.ContactsFragment"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_contactsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.hw2_4_viewpager2.fragment.note.NoteFragment"
+        android:name="com.example.hw2_4_viewpager2.note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_addNoteFragment2"
+            app:destination="@id/addNoteFragment2" />
+        <action
+            android:id="@+id/action_noteFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_contactsFragment2"
+            app:destination="@id/contactsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.hw2_4_viewpager2.fragment.board.OnBoardFragment"
+        android:name="com.example.hw2_4_viewpager2.board.OnBoardFragment"
         android:label="fragment_on_board"
-        tools:layout="@layout/fragment_on_board" />
-    <fragment
-        android:id="@+id/contactsFragment"
-        android:name="com.example.hw2_4_viewpager2.fragment.contacts.ContactsFragment"
-        android:label="fragment_contacts"
-        tools:layout="@layout/fragment_contacts" />
+        tools:layout="@layout/fragment_on_board" >
+        <action
+            android:id="@+id/action_onBoardFragment_to_registerFragment2"
+            app:destination="@id/registerFragment2" />
+        <action
+            android:id="@+id/action_onBoardFragment_to_phoneFragment"
+            app:destination="@id/phoneFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.hw2_4_viewpager2.fragment.profile.ProfileFragment"
+        android:name="com.example.hw2_4_viewpager2.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.example.hw2_4_viewpager2.code.CodeFragment"
+        android:label="CodeFragment" />
+    <fragment
+        android:id="@+id/registerFragment2"
+        android:name="com.example.hw2_4_viewpager2.fragment.RegisterFragment"
+        android:label="RegisterFragment" />
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.hw2_4_viewpager2.init.PhoneFragment"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" >
+        <action
+            android:id="@+id/action_phoneFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_phoneFragment_to_codeFragment"
+            app:destination="@id/codeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment2"
+        android:name="com.example.hw2_4_viewpager2.note.AddNoteFragment"
+        android:label="AddNoteFragment" />
+
+
 </navigation>

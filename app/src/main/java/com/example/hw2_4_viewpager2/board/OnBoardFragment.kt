@@ -1,4 +1,4 @@
-package com.example.hw2_4_viewpager2.fragment.board
+package com.example.hw2_4_viewpager2.board
 
 
 import androidx.navigation.fragment.findNavController
@@ -8,7 +8,8 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class OnBoardFragment : BaseFragment<FragmentOnBoardBinding>(FragmentOnBoardBinding::inflate), BoardAdapter.Result {
+class OnBoardFragment : BaseFragment<FragmentOnBoardBinding>(FragmentOnBoardBinding::inflate),
+    BoardAdapter.Result {
 
     private val adapter: BoardAdapter by lazy {
         BoardAdapter(this)

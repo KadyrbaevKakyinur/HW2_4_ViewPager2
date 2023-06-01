@@ -1,4 +1,4 @@
-package com.example.hw2_4_viewpager2.fragment.note
+package com.example.hw2_4_viewpager2.note
 
 import android.content.Context
 import androidx.room.Database
@@ -15,9 +15,9 @@ abstract class NoteDataBase: RoomDatabase() {
         private val LOCK = Any()
 
         private fun buildDataBase(context: Context)=
-            Room.databaseBuilder(context,NoteDataBase::class.java,"DB_name").allowMainThreadQueries().build()
+            Room.databaseBuilder(context, NoteDataBase::class.java,"DB_name").allowMainThreadQueries().build()
 
-        operator fun invoke(context: Context)= INSTANCE?: synchronized(LOCK){
+        operator fun invoke(context: Context)= INSTANCE ?: synchronized(LOCK){
             INSTANCE ?: buildDataBase(context).also { INSTANCE = it }
         }
 

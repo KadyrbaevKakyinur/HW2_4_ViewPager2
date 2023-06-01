@@ -10,4 +10,16 @@
     <string name="profile">Profile screen </string>
     <string name="note">Note</string>
     <string name="contact">Contact</string>
+    <string name="save">Save</string>
+    <string name="name">name</string>
+    <string name="phone">phone</string>
+    <string name="date">date</string>
+    <string name="read_contacts">Read contact</string>
+    <string name="notes">Your notes</string>
+    <string name="surname">Surname:</string>
+    <string name="married">Married:</string>
+    <string name="title1">Add note</string>
+    <string name="title2">Your notes</string>
+    <string name="contacts">contacts</string>
+    <string name="phone_number">phone number</string>
 </resources>

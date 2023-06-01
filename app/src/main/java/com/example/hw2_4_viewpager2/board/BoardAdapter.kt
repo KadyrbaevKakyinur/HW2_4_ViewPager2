@@ -1,4 +1,4 @@
-package com.example.hw2_4_viewpager2.fragment.board
+package com.example.hw2_4_viewpager2.board
 
 
 import android.view.LayoutInflater
